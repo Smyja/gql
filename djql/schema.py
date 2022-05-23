@@ -8,25 +8,30 @@ class RestaurantType(DjangoObjectType):
         model = Restaurant
         fields = ("id", "name", "address")
 
+
 class CategoryType(DjangoObjectType):
     class Meta:
         model = Category
-        fields = ("id","name")
+        fields = ("id", "name")
+
 
 class QuizzesType(DjangoObjectType):
     class Meta:
         model = Quizzes
-        fields = ("id","title","category")
+        fields = ("id", "title", "category")
+
 
 class QuestionType(DjangoObjectType):
     class Meta:
         model = Question
-        fields = ("title","quiz")
+        fields = ("title", "quiz")
+
 
 class AnswerType(DjangoObjectType):
     class Meta:
         model = Answer
-        fields = ("question","answer_text")
+        fields = ("question", "answer_text")
+
 
 class Query(graphene.ObjectType):
     restaurants = graphene.List(RestaurantType)
@@ -35,8 +40,10 @@ class Query(graphene.ObjectType):
 
     def resolve_all_questions(root, info, id):
         return Question.objects.get(pk=id)
+
     def resolve_all_answers(root, info, id):
         return Answer.objects.filter(question=id)
+
     def resolve_restaurants(self, info, **kwargs):
         return Restaurant.objects.all()
 
@@ -44,17 +51,18 @@ class Query(graphene.ObjectType):
 class CategoryMutation(graphene.Mutation):
     class Arguments:
         name = graphene.String(required=True)
+
     category = graphene.Field(CategoryType)
 
     @classmethod
-    def mutate(cls,root,info,name):
-        category= Category(name=name)
+    def mutate(cls, root, info, name):
+        category = Category(name=name)
         category.save()
         return CategoryMutation(category=category)
+
 
 class Mutation(graphene.ObjectType):
     update_category = CategoryMutation.Field()
 
 
-
-schema = graphene.Schema(query=Query,mutation=Mutation)
+schema = graphene.Schema(query=Query, mutation=Mutation)
