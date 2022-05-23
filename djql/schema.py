@@ -47,7 +47,7 @@ class CategoryMutation(graphene.Mutation):
     category = graphene.Field(CategoryType)
 
     @classmethod
-    def mutate(root,info,name):
+    def mutate(cls,root,info,name):
         category= Category(name=name)
         category.save()
         return CategoryMutation(category=category)
