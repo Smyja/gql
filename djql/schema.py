@@ -8,14 +8,6 @@ class RestaurantType(DjangoObjectType):
         model = Restaurant
         fields = ("id", "name", "address")
 
-class Query(graphene.ObjectType):
-    restaurants = graphene.List(RestaurantType)
-
-class RestaurantType(DjangoObjectType):
-    class Meta:
-        model = Restaurant
-        fields = ("id", "name", "address")
-
 class CategoryType(DjangoObjectType):
     class Meta:
         model = Category
