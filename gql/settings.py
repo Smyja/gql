@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-rt4rex6752274u$+^g!$*z3qeow_4kr87dl9-8c_sy!7xf^ftr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gql.smyja.repl.co']
+ALLOWED_HOSTS = ['1588e988-7194-4104-ab4a-056b6c9f3410.id.repl.co']
 
 CSRF_TRUSTED_ORIGINS=['https://*.gql.smyja.repl.co']
 
