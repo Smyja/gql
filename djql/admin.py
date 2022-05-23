@@ -5,6 +5,7 @@ from . import models
 
 admin.site.register(models.Restaurant)
 
+@admin.register(models.Category)
 class CatAdmin(admin.ModelAdmin):
 	list_display = [
         'name',
