@@ -46,7 +46,7 @@ class Query(graphene.ObjectType):
 class CategoryMutation():
     class Arguments:
         name = graphene.String(required=True)
-    category = graphene.Field(CategoryType)
+        category = graphene.Field(CategoryType)
 
     @classmethod
     def mutate(root,info,name):
@@ -54,7 +54,7 @@ class CategoryMutation():
         category.save()
         return CategoryMutation(category=category)
 
-class Mutation (graphene.ObjectType):
+class Mutation(graphene.ObjectType):
     update_category = CategoryMutation.Field()
 
 
