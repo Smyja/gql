@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+import django
+from django.utils.encoding import force_str
+django.utils.encoding.force_text = force_str
 
 from pathlib import Path
 
@@ -20,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!qmuvvju7n*!weed8ejhy1u&fiaxxq_xkx$cqjatc(-9e*$&yi'
+SECRET_KEY = 'django-insecure-rt4rex6752274u$+^g!$*z3qeow_4kr87dl9-8c_sy!7xf^ftr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djql',
+    'graphene_django'
 ]
 
 MIDDLEWARE = [
