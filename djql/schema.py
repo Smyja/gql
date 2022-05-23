@@ -45,7 +45,7 @@ class Query(graphene.ObjectType):
 
 class CategoryMutation():
     class Arguments:
-        name = graphene.string(required=True)
+        name = graphene.String(required=True)
     category = graphene.Field(CategoryType)
 
     @classmethod
