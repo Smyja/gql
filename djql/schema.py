@@ -41,9 +41,7 @@ class Query(graphene.ObjectType):
         return Restaurant.objects.all()
 
 
-
-
-class CategoryMutation():
+class CategoryMutation(graphene.Mutation):
     class Arguments:
         name = graphene.String(required=True)
         category = graphene.Field(CategoryType)
