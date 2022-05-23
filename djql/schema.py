@@ -48,10 +48,5 @@ class Query(graphene.ObjectType):
     def resolve_restaurants(self, info, **kwargs):
         return Restaurant.objects.all()
 
-schema = graphene.Schema(query=Query)
-
-    def resolve_restaurants(self, info, **kwargs):
-        return Restaurant.objects.all()
-
 
 schema = graphene.Schema(query=Query)
