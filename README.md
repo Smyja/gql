@@ -12,3 +12,14 @@ query GetQuestions {
   
 }
 ```
+
+To run a mutation 
+```graphql
+mutation addcate{
+  updateCategory(id:1,name:"jops"){
+    category{
+      name
+    }
+  }
+}
+```
