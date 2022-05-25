@@ -1,4 +1,6 @@
-# gql
+# Graphql Api with Django
+
+This is a Quiz api done with graphql and Django.
 
 To run a Query.
 ```graphql
